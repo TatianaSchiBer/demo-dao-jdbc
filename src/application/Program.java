@@ -17,10 +17,10 @@ public class Program {
 		Seller seller = new Seller(20,"Bob","bob@gmail.com",new Date(),3000.00,obj);
 		SellerDao sellerDao = DaoFactory.creaSellerDao();
 		*/
-		System.out.println("====== TEST 1: seller findById ============");
 		SellerDao sellerDao = DaoFactory.creaSellerDao();
-		Seller seller = sellerDao.findById(3);
+		System.out.println("====== TEST 1: seller findById ============");
 		
+		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
 		
 		System.out.println("\n====== TEST 2: seller findByDepartment ============");
@@ -30,7 +30,15 @@ public class Program {
 			System.out.println(obj);
 		}
 		
+		System.out.println("\n====== TEST 3: seller findAll ============");
+		
+		list = sellerDao.findAll();
+		for(Seller obj : list) {
+			System.out.println(obj);
+		}
 		
 	}
-
 }
+	
+
+
